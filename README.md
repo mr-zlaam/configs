@@ -17,7 +17,7 @@
   npm i -g prettier // For formatting
 
 
-```javascript
+```
 
 ### By using this configuration you will able to use `tailwind css with intellisense`, `emit` , `tsx` ,`jsx` and `formating on-save`
 
