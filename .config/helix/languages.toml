@@ -1,0 +1,89 @@
+[language-server]
+deno = { command = "deno", args = ["lsp"] }
+emmet-ls = { command = "emmet-ls", args = ["--stdio"] }
+[language-server.mylang-lsp]
+command = "mylang-lsp"
+args = ["--stdio"]
+config = { provideFormatter = true }
+environment = { "ENV1" = "value1", "ENV2" = "value2" }
+
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+args = ["--stdio"]
+
+[language-server.efm-lsp-prettier.config]
+documentFormatting = true
+languages = {  typescript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ], javascript = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ], json = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ], html = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ], css = [ { formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true } ]}
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+validate = "on"
+run = "onType"
+
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-html-language-server.config]
+html = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server", "eslint","tailwindcss-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls","tailwindcss-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ,"tailwindcss-ls"]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server", "eslint","tailwindcss-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "javascript" ] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = [ "--parser", "json" ] }
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "emmet-ls", "tailwindcss-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "html" ] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "emmet-ls",]
+formatter = { command = "prettier", args = [ "--parser", "css" ] }
+auto-format = true
+# formatters 
+
+
+#--------------------------------------------
+
