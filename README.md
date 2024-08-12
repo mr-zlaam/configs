@@ -6,18 +6,18 @@
  
 
 ```javascript
-# Install node js first if you haven't
+// Install node js first if you haven't
 
-  npm install -g typescript-language-server typescript # provide intellisense for javascript and typescript files also support jsx/tsx
+  npm install -g typescript-language-server typescript // provide intellisense for javascript and typescript files also support jsx/tsx
 
   npm i -vscode-langservers-extracted # live error lens
 
-  npm install -g emmet-ls # auto completion for html
+  npm install -g emmet-ls // auto completion for html
 
-  npm i -g prettier # For formatting
+  npm i -g prettier // For formatting
 
- curl -fsSL https://deno.land/x/install/install.sh | sh #optional
-```
+
+```javascript
 
 ### By using this configuration you will able to use `tailwind css with intellisense`, `emit` , `tsx` ,`jsx` and `formating on-save`
 
